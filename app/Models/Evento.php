@@ -18,4 +18,9 @@ class Evento extends Model
     protected $casts = [
         'fecha' => 'date',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'evento_user');
+    }
 }
